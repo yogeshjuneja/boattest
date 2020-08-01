@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterBoat</title>
+</head>
+<body>
+    <form action="~/Boat/RegisterBoatSubmit" method="post">
+        @Html.AntiForgeryToken()
+        <h2>Register a Boat</h2>
+        <input type="text" name="BoatName" maxlength="50" required placeholder="Boat Name" />
+        <br /><br />
+        <input type="number" name="HourlyRate" maxlength="3" required placeholder="Hourly Rate" />
+        <br />  <br />
+        <button type="submit">Submit</button>
+    </form>
+    <br />
+    @{
+        if (TempData["SubmitOutput"] != null)
+        {
+            <span>@TempData["SubmitOutput"].ToString()</span>
+        }
+    }
+
+</body>
+</html>

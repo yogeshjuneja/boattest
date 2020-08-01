@@ -1,0 +1,16 @@
+
+CREATE TABLE BoatDetails
+(
+ID BIGINT IDENTITY(1,1),
+BoatName nvarchar(60),
+HourlyRate BIGINT,
+CONSTRAINT PK_BoatDetails_ID PRIMARY KEY (ID)
+)
+
+CREATE TABLE BoatRental
+(
+ID BIGINT IDENTITY(1,1),
+BoatID nvarchar(60),
+CustomerName BIGINT,
+CONSTRAINT PK_BoatRental_ID PRIMARY KEY (ID)
+)

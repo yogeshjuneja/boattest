@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RentBoat</title>
+</head>
+<body>
+    <form action="~/Boat/RentBoatSubmit" method="post">
+        @Html.AntiForgeryToken()
+        <h2>Rent a Boat</h2>
+        <input type="number" name="BoatNumber" maxlength="5" required placeholder="Boat Number" />
+        <br />        <br />
+        <input type="text" name="CustomerName" maxlength="50" required placeholder="Customer Name" />
+        <br />        <br />
+        <button type="submit">Submit</button>
+    </form>
+    <br />
+    @{
+        if (TempData["SubmitOutput"] != null)
+        {
+            <span>@TempData["SubmitOutput"].ToString()</span>
+        }
+    }
+</body>
+</html>
